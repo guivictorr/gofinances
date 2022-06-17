@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import theme from '../screens/global/styles/theme';
+import theme from '../global/styles/theme';
 
 declare module 'styled-components' {
   type Theme = typeof theme;
