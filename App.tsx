@@ -9,7 +9,6 @@ import {
 
 import { Dashboard } from './src/screens/Dashboard';
 import theme from './src/global/styles/theme';
-import AppLoading from 'expo-app-loading';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,7 +18,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return;
   }
 
   return (
