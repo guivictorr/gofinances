@@ -1,5 +1,12 @@
 import React from 'react';
+import { FlatList } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { HighlightCard } from '../../components/HighlightCard';
+import { Text } from '../../components/Text';
+import {
+  TransactionItem,
+  TransactionItemProps,
+} from '../../components/TransactionItem';
 import {
   Container,
   Header,
@@ -13,7 +20,29 @@ import {
   HighlightCards,
 } from './styles';
 
+const data = Array.from({ length: 7 }, (_, index) => ({
+  title: 'Desenvolvimento de site',
+  amount: 12_000,
+  id: String(index),
+  type: ['income', 'outcome'][Math.round(Math.random())] as
+    | 'income'
+    | 'outcome',
+  category: {
+    title: 'Casa',
+    icon: 'shopping-bag',
+  },
+  date: new Date().toISOString(),
+}));
+
 export function Dashboard() {
+  const contentStlyes = {
+    paddingBottom: getBottomSpace(),
+    paddingHorizontal: 24,
+  };
+  const listStyles = {
+    marginTop: 84,
+  };
+
   return (
     <Container>
       <Header>
@@ -54,6 +83,16 @@ export function Dashboard() {
           lastTransaction="01 á 06 de abril"
         />
       </HighlightCards>
+
+      <FlatList
+        data={data}
+        keyExtractor={(item: TransactionItemProps) => item.id}
+        ListHeaderComponent={<Text size="lg">Listagem</Text>}
+        renderItem={({ item }) => <TransactionItem {...item} />}
+        showsVerticalScrollIndicator={false}
+        style={listStyles}
+        contentContainerStyle={contentStlyes}
+      />
     </Container>
   );
 }
