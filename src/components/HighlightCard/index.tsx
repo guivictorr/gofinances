@@ -9,16 +9,31 @@ import {
   Title,
 } from './styles';
 
-export function HighlightCard() {
+type HighlightCardProps = {
+  title: string;
+  amount: number;
+  lastTransaction: string;
+};
+
+export function HighlightCard({
+  amount,
+  lastTransaction,
+  title,
+}: HighlightCardProps) {
+  const formattedAmount = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(amount);
+
   return (
     <Container>
       <Header>
-        <Title>Title</Title>
+        <Title>{title}</Title>
         <Icon name="arrow-up-circle" />
       </Header>
       <Footer>
-        <Amount>R$ 120,00</Amount>
-        <LastTransaction>Última entrada dia 17 de abril</LastTransaction>
+        <Amount>{formattedAmount}</Amount>
+        <LastTransaction>{lastTransaction}</LastTransaction>
       </Footer>
     </Container>
   );
