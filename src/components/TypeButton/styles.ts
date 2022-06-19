@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
+import Feather from '@expo/vector-icons/Feather';
 import { TypeButtonProps } from '.';
 
 type ContainerProps = Pick<TypeButtonProps, 'isActive' | 'type'>;
