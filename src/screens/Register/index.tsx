@@ -19,8 +19,8 @@ export function Register() {
           <Input placeholder="Nome" />
           <Input placeholder="Preço" />
           <TypesWrapper>
-            <TypeButton type="income" />
-            <TypeButton type="expense" />
+            <TypeButton title="Income" type="income" />
+            <TypeButton title="Outcome" type="expense" />
           </TypesWrapper>
         </Fields>
         <Button>

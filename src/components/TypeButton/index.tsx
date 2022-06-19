@@ -4,15 +4,17 @@ import { Icon } from '../HighlightCard/styles';
 import { Text } from '../Text';
 import { Container } from './styles';
 
-type TypeButtonProps = {
+export type TypeButtonProps = {
   type: HighlightCardProps['type'];
+  title: 'Income' | 'Outcome';
+  isActive?: boolean;
 };
 
-export function TypeButton({ type }: TypeButtonProps) {
+export function TypeButton({ type, title, isActive = false }: TypeButtonProps) {
   return (
-    <Container>
+    <Container isActive={isActive} type={type}>
       <Icon name={HighlightIcon[type]} size={26} />
-      <Text size="sm">Income</Text>
+      <Text size="sm">{title}</Text>
     </Container>
   );
 }
