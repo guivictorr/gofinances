@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { TransactionItemProps } from '../../components/TransactionItem';
-import { FlatList } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
