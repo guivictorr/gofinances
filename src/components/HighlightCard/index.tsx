@@ -33,7 +33,7 @@ export function HighlightCard({
         <Text size="sm" color={color}>
           {title}
         </Text>
-        <Icon name={HighlightIcon[type]} />
+        <Icon size={40} name={HighlightIcon[type]} />
       </Header>
       <Footer>
         <Amount color={color} weight="medium">

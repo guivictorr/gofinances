@@ -60,7 +60,5 @@ const iconModifiers: GenericModifier<HighlightIcon> = {
 };
 
 export const Icon = styled(Feather)`
-  font-size: ${RFValue(40)}px;
-
   ${(props) => iconModifiers[props.name](props.theme)}
 `;
